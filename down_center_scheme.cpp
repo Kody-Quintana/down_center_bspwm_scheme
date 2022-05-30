@@ -1,11 +1,9 @@
 #include <X11/Xlib.h>
-#include <X11/Xutil.h>
 #include <boost/process.hpp>
 #include <boost/process/io.hpp>
 #include <boost/process/pipe.hpp>
 #include <fstream>
 #include <iostream>
-#include <netdb.h>
 #include <sstream>
 #include <string.h>
 
@@ -31,7 +29,6 @@ void vlc_fullscreen_fix(string instance, string wid){
             return;
         }
 
-        // If title == "vlc"
         getline(pipe_stream, xtitle);
         if (xtitle == "vlc"){
             cout << "layer=above border=off" << endl;
